@@ -1,0 +1,10 @@
+
+<div *ngIf="articles">
+    <div *ngFor="let article of articles">
+        <a href="#">{{ article.title }}</a>
+        <img src="{{ article.image_url }}" />
+        {{ article.published }}
+        <!--<a href="{{ article.link}}">Lire....</a>-->
+        {{ article.description }}
+    </div>
+</div>

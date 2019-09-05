@@ -1,0 +1,162 @@
+<!-- Start horizontal navigation -->
+<nav>
+    <div id="op-horizontalnav">
+    <ul class="op-sectionlist">
+    <li class="op-v-item"><a class="op-v-link" href="javascript:scroll(0,0);">Acualités</a></li>
+    <li class="op-v-item"><a class="op-v-link" href="#mysect2">Science</a></li>
+    <li class="op-v-item"><a class="op-v-link" href="#mysect3">Culture</a></li>
+    <li class="op-v-item"><a class="op-v-link" href="#mysect4">Sport</a></li>
+    </ul>
+    </div>
+    </nav>
+    <!-- end horizontal navigation -->
+
+    <!-- Wrapper sections -->
+<div class="content">
+
+    <section id="mysect1">
+        <div style="text-align:center;">
+            <label><span style="font-size: xx-large">Actualités</span> Recherche</label>
+            <input placeholder="Dans l'Actualité..." type="text" [(ngModel)]="term">
+        </div>
+        <br />
+        <div *ngIf="term">
+            <div *ngFor="let article of actuArticles |filter:term">
+                <div class="w3-container">
+                    <a href="{{ article.link }}" target="_blank">
+                        <img src="{{ article.enclosure.link }}" width="250px" height="150px" class="d-block w-100" alt=""/>
+                        <h5>
+                            {{ article.title }}<br />
+                            <span class="w3-opacity">
+                                {{ article.pubDate }}}
+                            </span>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+              <div class="card-group" *ngFor="let article of actuArticles">
+                  <div class="card">
+                    <div class="card-body">
+                        <img src="{{ article.enclosure.link }}" class="d-block w-100" alt=""/>
+                        <a href="{{ article.link}}" target="blank" style="color:cadetblue;font-size:large">{{ article.title }}</a>
+                      <p class="card-text">{{ article.description }}</p>
+                      <p class="card-text"><small class="text-muted">{{ article.pubDate }}</small></p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+    </section>
+    <hr />
+    <div style="text-align:center;" id="mysect2">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+    <hr />
+    <section>
+        <div style="text-align:center;">
+            <label><span style="font-size: xx-large">Science </span> Recherche</label>
+            <input placeholder="Dans La Science..." type="text" [(ngModel)]="term">
+        </div>
+        <br />
+        <div *ngIf="term">
+            <div *ngFor="let article of scienceArticles |filter:term">
+                <div class="w3-container">
+                    <a href="{{ article.link }}" target="_blank">
+                        <img src="{{ article.enclosure.link }}" width="250px" height="150px" class="d-block w-100" alt=""/>
+                        <h5>
+                            {{ article.title }}<br />
+                            <span class="w3-opacity">
+                                {{ article.pubDate }}}
+                            </span>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="card-group" *ngFor="let article of scienceArticles">
+              <div class="card">
+                <div class="card-body">
+                    <img src="{{ article.enclosure.link }}" class="d-block w-100" alt=""/>
+                    <a href="{{ article.link}}" target="blank" style="color:cadetblue;font-size:large">{{ article.title }}</a>
+                  <p class="card-text">{{ article.description }}</p>
+                  <p class="card-text"><small class="text-muted">{{ article.pubDate }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <hr />
+    <div style="text-align:center;" id="mysect3">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+    <hr />
+    <section>
+        <div style="text-align:center;">
+            <label><span style="font-size: xx-large">Culture </span> Recherche</label>
+            <input placeholder="Dans La culture..." type="text" [(ngModel)]="term">
+        </div>
+        <br />
+        <div *ngIf="term">
+            <div *ngFor="let article of cultureArticles |filter:term">
+                <div class="w3-container">
+                    <a href="{{ article.link }}" target="_blank">
+                        <img src="{{ article.enclosure.link }}" width="250px" height="150px" class="d-block w-100" alt=""/>
+                        <h5>
+                            {{ article.title }}<br />
+                            <span class="w3-opacity">
+                                {{ article.media_name }} . {{ article.published }}
+                            </span>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="card-group" *ngFor="let article of cultureArticles">
+              <div class="card">
+                <div class="card-body">
+                    <img src="{{ article.enclosure.link }}" class="d-block w-100" alt=""/>
+                  <a href="{{ article.link}}" target="blank" style="color:cadetblue;font-size:large">{{ article.title }}</a>
+                  <p class="card-text">{{ article.description }}</p>
+                  <p class="card-text"><small class="text-muted">{{ article.pubDate }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <hr />
+    <div style="text-align:center;" id="mysect4">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</div>
+    <hr />
+    <section>
+        <div style="text-align:center;">
+            <label><span style="font-size: xx-large">Sport </span> Recherche</label>
+            <input placeholder="Dans Le Sport..." type="text" [(ngModel)]="term">
+        </div>
+        <br />
+        <div *ngIf="term">
+            <div *ngFor="let article of sportArticles |filter:term">
+                <div class="w3-container">
+                    <a href="{{ article.link }}" target="_blank">
+                        <img src="{{ article.enclosure.link }}" width="250px" height="150px" class="d-block w-100" alt=""/>
+                        <h5>
+                            {{ article.title }}<br />
+                            <span class="w3-opacity">
+                                {{ article.media_name }} . {{ article.published }}
+                            </span>
+                        </h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="card-group" *ngFor="let article of sportArticles">
+              <div class="card">
+                <div class="card-body">
+                    <img src="{{ article.enclosure.link }}" class="d-block w-100" alt=""/>
+                    <a href="{{ article.link}}" target="blank" style="color:cadetblue;font-size:large">{{ article.title }}</a>
+                  <p class="card-text">{{ article.description }}</p>
+                  <p class="card-text"><small class="text-muted">{{ article.pubDate }}</small></p>
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+</div>
